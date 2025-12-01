@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Generator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8e8e8;
+            padding-bottom: 80px; /* bottom input জন্য space */
+        }
+
+        /* Header */
+        .heading {
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        /* Main Content */
+        .content {
+            width: 90%;
+            max-width: 700px;
+            margin: 25px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        .show-news {
+            background: #f9f9f9;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .show-news h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        p {
+            color: #444;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        /* Input Form (Fixed Bottom) */
+        .input-form {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 15px;
+            background: #ffffff;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.18);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .input-form input[type="text"] {
+            flex: 1;
+            height: 45px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .input-form input[type="text"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 6px rgba(76,175,80,0.4);
+        }
+
+        .input-form input[type="submit"] {
+            width: 120px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .input-form input[type="submit"]:hover {
+            background: #3e8e41;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .heading {
+                font-size: 22px;
+                padding: 15px;
+            }
+            .show-news h3 {
+                font-size: 18px;
+            }
+            .input-form {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .input-form input[type="submit"] {
+                width: 100%;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">Welcome to Fake News Generator</h1>
+
+    <div class="content">
+        <h3><u>BREAKING NEWS:</u></h3>
+        <div class="show-news">
+            <h3>{{headline}}</h3>
+            <br>
+            <p>Something interesting is happening...</p>
+        </div>
+    </div>
+
+    <div class="input-form">
+        <form method="POST" style="display: flex; width: 100%; gap: 10px;">
+            <input type="text" name="person_name" placeholder="Enter person name">
+            <input type="submit" value="Generate">
+        </form>
+    </div>
+
+</body>
+</html>
