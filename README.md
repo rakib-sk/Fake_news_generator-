@@ -81,6 +81,14 @@ python app.py
 - Enter a person's name in the input field.
 - Press Generate to see a funny headline appear instantly.
 
+--
+
+## 📸 Screenshots
+
+![Attendance Table Screenshot](screenshot.png)
+
+---
+
 ## 🎨 How It Works
 - Flask reads the news_data.json file to get lists of actions and places.
 - When a user submits a name via the form, a random action and place are chosen.
