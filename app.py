@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import random
 import json
+from flask_frozen import Freezer
 
 app = Flask(__name__)
 
@@ -28,5 +29,10 @@ def fake_news():
 
     return render_template("index.html")
 
+
+# Frozen-Flask
+freezer = Freezer(app)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    
+    freezer.freeze()
